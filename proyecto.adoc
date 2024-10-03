@@ -1,0 +1,65 @@
+:toc: macro
+:toc-title: Tabla de Contenidos
+:toclevels: 3
+
+= Informe Ecommerce Fundación Clafira
+Camilo Castro
+2024
+
+== Introducción
+
+Este informe describe la planificación para la creación de una tienda online para la Fundación Clafira, la cual busca apoyar su misión de rescatar animales a través de la venta de boletos para rifas y otros productos. El nivel de presupuesto del proyecto es bajo y se estiman entre 1000 y 5000 transacciones diarias. 
+
+Se abordarán las siguientes áreas clave: selección de servidor, diseño de base de datos, diseño de endpoints REST, costos estimados de servidor y operación, selección tecnológica tanto en backend como frontend, selección de profesionales necesarios, y estimación de plazos para la implementación.
+
+== Selección de Servidor
+
+=== Consideraciones
+La tienda en línea manejará entre 1000 y 5000 transacciones diarias, por lo que se necesita un servidor que sea escalable y que ofrezca un rendimiento óptimo con costos controlados, dada la limitación presupuestaria.
+
+=== Opción 1: VPS (Servidor Privado Virtual)
+Una opción rentable y escalable es usar un servidor VPS (Virtual Private Server) en plataformas como DigitalOcean, Linode o AWS Lightsail. Estas soluciones ofrecen un buen equilibrio entre costo y escalabilidad.
+
+**Pros:**
+* Bajo costo inicial.
+* Escalabilidad vertical (más capacidad cuando sea necesario).
+
+**Contras:**
+* Requiere mantenimiento técnico por parte de un administrador de sistemas.
+
+=== Opción 2: PaaS (Plataforma como Servicio)
+Para simplificar la administración del servidor, una alternativa podría ser usar servicios como Heroku o Vercel, que son más fáciles de manejar y automatizan la infraestructura.
+
+**Pros:**
+* Facilidad de uso.
+* Escalabilidad automática.
+* Requiere menor administración técnica.
+
+**Contras:**
+* Puede ser más costoso si el tráfico aumenta mucho.
+* Menos flexibilidad comparado con VPS.
+
+== Diseño de Base de Datos
+
+La base de datos debe almacenar información de usuarios, transacciones, productos (rifas), boletos y sorteos. Se recomienda usar una base de datos relacional como PostgreSQL debido a la naturaleza de las transacciones, que requieren consistencia y robustez.
+
+=== Tablas principales
+
+* **Usuarios**: Almacena datos de los clientes (nombre, correo electrónico, dirección).
+* **Transacciones**: Historial de compras y pagos (ID de transacción, monto, usuario).
+* **Productos (rifas)**: Detalle de cada rifa disponible.
+* **Boletos**: Relación entre rifas y usuarios, cada boleto vendido.
+* **Sorteos**: Información del sorteo, ganadores y boletos seleccionados.
+
+== Diseño de Endpoints REST
+
+El sistema contará con un API REST para manejar las interacciones del frontend con el backend.
+
+=== Endpoints propuestos:
+
+* **POST /usuarios**: Registro de nuevos usuarios.
+* **POST /login**: Inicio de sesión de usuarios.
+* **GET /rifas**: Obtener todas las rifas disponibles.
+* **POST /boletos**: Comprar un boleto para una rifa.
+* **GET /sorteo/{id}**: Ver el resultado del sorteo.
+* **POST /transacciones**: Registrar una nueva transacción.
