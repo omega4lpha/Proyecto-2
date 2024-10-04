@@ -233,8 +233,11 @@ xychart-beta
 
 [source,mermaid]
 ....
-journey
-    title My working day
+graph TB
+  subgraph Title[**<font color="#FF69B4">Custom Title</font>**]
+    direction TB
+    ...
+  end
 
 
 ....
