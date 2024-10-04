@@ -193,3 +193,19 @@ sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     Bob-->>Alice: Great!
 ....
+
+
+gitGraph:
+    commit "Ashish"
+    branch newbranch
+    checkout newbranch
+    commit id:"1111"
+    commit tag:"test"
+    checkout main
+    commit type: HIGHLIGHT
+    commit
+    merge newbranch
+    commit
+    branch b2
+    commit
+
