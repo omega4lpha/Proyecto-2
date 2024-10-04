@@ -233,11 +233,10 @@ xychart-beta
 
 [source,mermaid]
 ....
-graph TB
-  subgraph Title[**<font color="#FF69B4">Custom Title</font>**]
-    direction TB
-    ...
-  end
+graph TD;
+    A[Texto normal] --> B[Texto en rojo];
+    style B fill:#fff,stroke:#f00,stroke-width:2px,color:#f00;
+
 
 
 ....
