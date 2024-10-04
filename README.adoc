@@ -234,8 +234,7 @@ xychart-beta
 [source,mermaid]
 ....
 graph TD;
-    A[Texto normal] --> B[Texto en rojo];
-    style B fill:#fff,stroke:#f00,stroke-width:2px,color:#f00;
+    A[<span style="color:red;">Animal example</span>];
 
 
 
