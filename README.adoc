@@ -194,7 +194,8 @@ sequenceDiagram
     Bob-->>Alice: Great!
 ....
 
-
+[source,mermaid]
+....
 gitGraph:
     commit "Ashish"
     branch newbranch
@@ -208,4 +209,5 @@ gitGraph:
     commit
     branch b2
     commit
+....
 
