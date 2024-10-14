@@ -1,0 +1,6 @@
+[preface]
+[role="authors"]
+
+== Authors
+
+A little about page for the authors of the book.
